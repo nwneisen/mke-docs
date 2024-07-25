@@ -11,9 +11,4 @@ The MKE Dashboard add-on provides the web UI to manage Kubernetes resources mana
 
 **To install the Dashboard add-on:**
 
-The dashboard is enabled by default in the MKE installation. It can be disabled by setting the `enabled` field to `false` in the `dashboard` section of the `config.yaml` file.
-
-```yaml
-dashboard:
-  enabled: false
-```
+The dashboard is enabled by default in the MKE installation.
