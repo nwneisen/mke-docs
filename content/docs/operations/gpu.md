@@ -7,18 +7,13 @@ Mirantis Kubernetes Engine (MKE) supports running workloads on GPU nodes.
 Current support is limited to NVIDIA GPUs. MKE uses the NVIDIA GPU Operator
 to manage GPU resources on the cluster.
 
-To enable GPU support, you must install the NVIDIA GPU Operator on your cluster
-and configure MKE to use it.
+To enable GPU support, MKE will install the NVIDIA GPU Operator on your cluster.
 
 ## Prerequisites
 
 Before you can enable GPU support in MKE, you must install the [NVIDIA GPU
 toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
 on each GPU enabled node in your cluster.
-
-```bash
-sudo nvidia-ctk runtime configure --runtime=containerd -config /etc/k0s/containerd.toml
-```
 
 ## Configuration
 
@@ -103,3 +98,10 @@ Device 0: "Tesla V100-SXM2-16GB"
 deviceQuery, CUDA Driver = CUDART, CUDA Driver Version = 10.2, CUDA Runtime Version = 10.2, NumDevs = 1
 Result = PASS
 ```
+
+## Upgrading
+
+If you are upgrading from an MKE3 cluster with GPU enabled, the [prerequisites](/docs/operations/gpu/#prerequisites)
+must be done before starting the upgrade process. Otherwise, the upgrade will
+see that the GPU is enabled in the MKE3 configuration and will transfer that
+configuration to MKE4.
