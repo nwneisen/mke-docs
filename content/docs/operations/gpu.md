@@ -101,7 +101,7 @@ Result = PASS
 
 ## Upgrading
 
-If you are upgrading from an MKE3 cluster with GPU enabled, the [prerequisites](/docs/operations/gpu/#prerequisites)
-must be done before starting the upgrade process. Otherwise, the upgrade will
-see that the GPU is enabled in the MKE3 configuration and will transfer that
-configuration to MKE4.
+To upgrade an MKE 3 cluster with GPU enabled,
+ensure you complete the [GPU prerequisites](/docs/operations/gpu/#prerequisites) before
+starting the upgrade process. Failing to do so will result in the upgrade process detecting
+the GPU configuration in MKE 3 and incorrectly transfering it to MKE 4.
