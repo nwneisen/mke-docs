@@ -63,7 +63,7 @@ spec:
 EOF
 ```
 
-Verify that the deployment is in a running state
+Verify that the deployment is in a running state:
 
 ```bash
 kubectl get pods | grep "gpu-test"
