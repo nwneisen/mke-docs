@@ -83,7 +83,7 @@ detection of the NVIDIA GPU device.
 kubectl logs gpu-test-747d746885-hpv74
 ```
 
-You should see output similar to the following:
+Example output:
 
 ```bash
 deviceQuery Starting...
