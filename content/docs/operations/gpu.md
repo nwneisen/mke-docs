@@ -25,7 +25,7 @@ gpu:
   enabled: true
 ```
 
-This informs MKE to install the NVIDIA GPU Operator on your cluster.
+Configuration enables MKE to install the NVIDIA GPU Operator on your cluster.
 
 ## Running GPU Workloads
 
