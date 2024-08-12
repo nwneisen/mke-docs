@@ -69,7 +69,7 @@ Verify that the deployment is in a running state:
 kubectl get pods | grep "gpu-test"
 ```
 
-You should see output similar to the following:
+Example output:
 
 ```bash
 NAME                        READY   STATUS    RESTARTS   AGE
