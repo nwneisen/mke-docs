@@ -17,8 +17,8 @@ on each GPU enabled node in your cluster.
 
 ## Configuration
 
-GPU support is disabled by default. To enable GPU support, you must configure
-the `gpu` section of the MKE configuration file.
+GPU support is disabled by default. To enable GPU support, configure
+the `gpu` section of the MKE configuration file:
 
 ```yaml
 gpu:
