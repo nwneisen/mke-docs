@@ -29,7 +29,7 @@ Configuration enables MKE to install the NVIDIA GPU Operator on your cluster.
 
 ## Running GPU Workloads
 
-This example runs a simple GPU workload that reports detected NVIDIA GPU devices.
+Run a simple GPU workload that reports detected NVIDIA GPU devices:
 
 ```yaml
 kubectl apply -f- <<EOF
