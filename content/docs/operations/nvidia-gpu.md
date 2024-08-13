@@ -1,9 +1,9 @@
 ---
-title: GPU Workloads
+title: NVIDIA GPU Workloads
 weight: 6
 ---
 
-Mirantis Kubernetes Engine (MKE) supports running workloads on GPU nodes.
+Mirantis Kubernetes Engine (MKE) supports running workloads on NVIDIA GPU nodes.
 Current support is limited to NVIDIA GPUs. MKE uses the NVIDIA GPU Operator
 to manage GPU resources on the cluster.
 
@@ -11,18 +11,19 @@ To enable GPU support, MKE installs the NVIDIA GPU Operator on your cluster.
 
 ## Prerequisites
 
-Before you can enable GPU support in MKE, you must install the [NVIDIA GPU
+Before you can enable NVIDIA GPU support in MKE, you must install the [NVIDIA GPU
 toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
 on each GPU enabled node in your cluster.
 
 ## Configuration
 
-GPU support is disabled by default. To enable GPU support, configure
-the `gpu` section of the MKE configuration file:
+NVIDIA GPU support is disabled by default. To enable NVIDIA GPU support, configure
+the `nvidiaGPU` section of the MKE configuration file under `devicePlugins`:
 
 ```yaml
-gpu:
-  enabled: true
+devicePlugins:
+  nvidiaGPU:
+    enabled: true
 ```
 
 Configuration enables MKE to install the NVIDIA GPU Operator on your cluster.
