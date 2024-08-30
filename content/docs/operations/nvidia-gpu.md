@@ -16,6 +16,31 @@ Before you can enable NVIDIA GPU support in MKE, you must perform the following 
 - Install the device [driver for your GPU](https://www.nvidia.com/en-us/drivers/)
 - Install the [NVIDIA GPU toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
 
+### Create the containerd config file
+
+Create the containerd config file `/etc/k0s/containerd.d/nvidia.toml` with the following content. The folder structure will not exist yet and will need to be created.
+
+```toml
+version = 2
+[plugins]
+
+  [plugins."io.containerd.grpc.v1.cri"]
+
+    [plugins."io.containerd.grpc.v1.cri".containerd]
+
+      [plugins."io.containerd.grpc.v1.cri".containerd.runtimes]
+
+        [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.nvidia]
+          privileged_without_host_devices = false
+          runtime_engine = ""
+          runtime_root = ""
+          runtime_type = "io.containerd.runc.v2"
+
+          [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.nvidia.options]
+            BinaryName = "/usr/bin/nvidia-container-runtime"
+
+```
+
 ## Configuration
 
 NVIDIA GPU support is disabled by default. To enable NVIDIA GPU support, configure
