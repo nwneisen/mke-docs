@@ -11,9 +11,10 @@ To enable GPU support, MKE installs the NVIDIA GPU Operator on your cluster.
 
 ## Prerequisites
 
-Before you can enable NVIDIA GPU support in MKE, you must install the [NVIDIA GPU
-toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
-on each GPU enabled node in your cluster.
+Before you can enable NVIDIA GPU support in MKE, you must perform the following on each GPU enabled node manually:
+
+- Install the device [driver for your GPU](https://www.nvidia.com/en-us/drivers/)
+- Install the [NVIDIA GPU toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
 
 ## Configuration
 
@@ -26,78 +27,42 @@ devicePlugins:
     enabled: true
 ```
 
-Configuration enables MKE to install the NVIDIA GPU Operator on your cluster.
-
 ## Running GPU Workloads
 
 Run a simple GPU workload that reports detected NVIDIA GPU devices:
 
 ```yaml
-kubectl apply -f- <<EOF
-apiVersion: apps/v1
-kind: Deployment
+cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: Pod
 metadata:
-  creationTimestamp: null
-  labels:
-    run: gpu-test
-  name: gpu-test
+  name: gpu-pod
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      run: gpu-test
-  template:
-    metadata:
-      labels:
-        run: gpu-test
-    spec:
-      containers:
-      - command:
-        - sh
-        - -c
-        - "deviceQuery && sleep infinity"
-        image: kshatrix/gpu-example:cuda-10.2
-        name: gpu-test
-        resources:
-          limits:
-            nvidia.com/gpu: "1"
+  restartPolicy: Never
+  containers:
+    - name: cuda-container
+      image: nvcr.io/nvidia/cloud-native/gpu-operator-validator:v22.9.0
+      resources:
+        limits:
+          nvidia.com/gpu: 1 # requesting 1 GPU
+  tolerations:
+  - key: nvidia.com/gpu
+    operator: Exists
+    effect: NoSchedule
 EOF
 ```
 
-Verify that the deployment is in a running state:
+Verify that the pod completed successfully:
 
 ```bash
-kubectl get pods | grep "gpu-test"
+kubectl get pods | grep "gpu-pod"
 ```
 
 Example output:
 
 ```bash
 NAME                        READY   STATUS    RESTARTS   AGE
-gpu-test-747d746885-hpv74   1/1     Running   0          14m
-```
-
-Review the logs of the `gpu-test` pod. `Result = PASS` indicates a successful
-detection of the NVIDIA GPU device.
-
-```bash
-kubectl logs gpu-test-747d746885-hpv74
-```
-
-Example output:
-
-```bash
-deviceQuery Starting...
-
-CUDA Device Query (Runtime API) version (CUDART static linking)
-
-Detected 1 CUDA Capable device(s)
-
-Device 0: "Tesla V100-SXM2-16GB"
-...
-
-deviceQuery, CUDA Driver = CUDART, CUDA Driver Version = 10.2, CUDA Runtime Version = 10.2, NumDevs = 1
-Result = PASS
+gpu-pod                     0/1     Completed 0          7m56s
 ```
 
 ## Upgrading
@@ -105,4 +70,4 @@ Result = PASS
 To upgrade an MKE 3 cluster with GPU enabled,
 ensure you complete the [GPU prerequisites](/docs/operations/gpu/#prerequisites) before
 starting the upgrade process. Failing to do so will result in the upgrade process detecting
-the GPU configuration in MKE 3 and incorrectly transfering it to MKE 4.
+the GPU configuration in MKE 3 and incorrectly transferring it to MKE 4.
