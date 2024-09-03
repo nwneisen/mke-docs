@@ -68,7 +68,4 @@ gpu-pod                     0/1     Completed 0          7m56s
 
 ## Upgrading
 
-To upgrade an MKE 3 cluster with GPU enabled,
-ensure you complete the [GPU prerequisites](/docs/operations/gpu/#prerequisites) before
-starting the upgrade process. Failing to do so will result in the upgrade process detecting
-the GPU configuration in MKE 3 and incorrectly transferring it to MKE 4.
+To upgrade an MKE 3 cluster with GPU enabled, make sure that you complete the [GPU prerequisites](/docs/operations/gpu/#prerequisites) before you start the upgrade process. Failing to do this will cause the upgrade process to detect the GPU configuration in MKE 3 and incorrectly transfer it to MKE 4.
