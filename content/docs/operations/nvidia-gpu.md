@@ -11,7 +11,7 @@ To enable GPU support, MKE installs the NVIDIA GPU Operator on your cluster.
 
 ## Prerequisites
 
-Before you can enable NVIDIA GPU support in MKE, you must install the following components on each GPU enabled node:
+Before you can enable NVIDIA GPU support in MKE, you must install the following components on each GPU-enabled node:
 
 - The device [driver for your GPU](https://www.nvidia.com/en-us/drivers/)
 - [NVIDIA GPU toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
