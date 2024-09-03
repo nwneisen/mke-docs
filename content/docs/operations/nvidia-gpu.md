@@ -11,11 +11,11 @@ To enable GPU support, MKE installs the NVIDIA GPU Operator on your cluster.
 
 ## Prerequisites
 
-Before you can enable NVIDIA GPU support in MKE, you must perform the following on each GPU enabled node manually:
+Before you can enable NVIDIA GPU support in MKE, you must install the following components on each GPU enabled node:
 
-- Install the device [driver for your GPU](https://www.nvidia.com/en-us/drivers/)
-- Install the [NVIDIA GPU toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
-- Install the [NVIDIA container runtime](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#configuring-containerd-for-kubernetes) for containerd with the command `sudo nvidia-ctk runtime configure --runtime=containerd --config /etc/k0s/containerd.d/nvidia.toml`
+- The device [driver for your GPU](https://www.nvidia.com/en-us/drivers/)
+- [NVIDIA GPU toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
+- [NVIDIA container runtime](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#configuring-containerd-for-kubernetes) for containerd, using the command `sudo nvidia-ctk runtime configure --runtime=containerd --config /etc/k0s/containerd.d/nvidia.toml`
 
 ## Configuration
 
@@ -53,7 +53,7 @@ spec:
 EOF
 ```
 
-Verify that the pod completed successfully:
+Verify the successful completion of the pod:
 
 ```bash
 kubectl get pods | grep "gpu-pod"
