@@ -142,3 +142,156 @@ client bundle. The docker swarm cluster will no longer be accessible as well.
 
 In the event of an upgrade failure, the upgrade process rolls back,
 restoring the MKE 3 cluster to its original state.
+
+## RBAC Migrations
+
+MKE 4 uses a different RBAC model than MKE 3. MKE 4 no longer supports swarm mode
+and uses Kubernetes RBAC for authorization. As a result, the RBAC configuration
+for Swarm mode does not exist in MKE 4. However, the Swarm mode roles have always
+had Kubernetes RBAC roles associated with them. The upgrade process migrates these
+Kubernetes roles and bindings to the new MKE 4 cluster.
+
+The following sections list the MKE 3 Swarm mode roles and their corresponding
+Kubernetes RBAC permissions:
+
+### View Only
+
+#### get, list, watch
+
+- CertificateSigningRequest
+- ClusterRoleBinding
+- ClusterRole
+- ComponentStatus
+- ConfigMap
+- ControllerRevision
+- CronJob
+- CustomResourceDefinition
+- DaemonSet
+- Deployment
+- Endpoint
+- Event
+- ExternalAdmissionHookConfiguration
+- HorizontalPodAutoscaler
+- Ingress
+- InitializerConfiguration
+- Job
+- LimitRange
+- Namespace
+- NetworkPolicy
+- Node
+- PersistentVolumeClaim
+- PersistentVolume
+- PodDisruptionBudget
+- PodPreset
+- Pod
+- PodTemplate
+- ReplicaSet
+- ReplicationController
+- ResourceQuota
+- RoleBinding
+- Role
+- ServiceAccount
+- Service
+- Stack
+- StatefulSet
+- StorageClass
+- ThirdPartyResource
+- User
+
+### Restricted Control
+
+#### get, list, watch
+
+- ClusterRoles
+- ClusterRoleBindings
+- Namespaces
+- Nodes
+- ResourceQuotas
+- NamespaceRoles
+- NamespaceRoleBindings
+- StorageClasses
+- Users
+
+#### create, delete, patch, update
+
+- CertificateSigningRequest
+- ComponentStatus
+- ConfigMap
+- ControllerRevision
+- CronJob
+- CustomResourceDefinition
+- DaemonSet
+- Deployment
+- Endpoint
+- Event
+- ExternalAdmissionHookConfiguration
+- HorizontalPodAutoscaler
+- Ingress
+- InitializerConfiguration
+- Job
+- LimitRange
+- NetworkPolicy
+- PersistentVolumeClaim
+- PersistentVolume
+- PodDisruptionBudget
+- PodPreset
+- Pod
+- PodTemplate
+- ReplicaSet
+- ReplicationController
+- RoleBinding
+- Role
+- Secret
+- ServiceAccount
+- Service
+- Stack
+- StatefulSet
+- ThirdPartyResource
+
+### Full Control
+
+#### get, list, watch, create, delete, patch, update
+
+- CertificateSigningRequest
+- ClusterRoleBinding
+- ClusterRole
+- ComponentStatus
+- ConfigMap
+- ControllerRevision
+- CronJob
+- CustomResourceDefinition
+- DaemonSet
+- Deployment
+- Endpoint
+- Event
+- ExternalAdmissionHookConfiguration
+- HorizontalPodAutoscaler
+- Ingress
+- InitializerConfiguration
+- Job
+- LimitRange
+- Namespace
+- NetworkPolicy
+- Node
+- PersistentVolumeClaim
+- PersistentVolume
+- PodDisruptionBudget
+- PodPreset
+- Pod
+- PodTemplate
+- ReplicaSet
+- ReplicationController
+- ResourceQuota
+- RoleBinding
+- Role
+- ServiceAccount
+- Service
+- Stack
+- StatefulSet
+- StorageClass
+- ThirdPartyResource
+- User
+
+### Scheduler
+
+No kubernetes RBAC permissions are associated with the Scheduler role.
