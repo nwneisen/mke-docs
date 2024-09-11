@@ -156,7 +156,8 @@ Kubernetes RBAC permissions:
 
 ### View Only
 
-#### get, list, watch
+<details>
+<summary>get, list, watch</summary>
 
 - CertificateSigningRequest
 - ClusterRoleBinding
@@ -198,9 +199,12 @@ Kubernetes RBAC permissions:
 - ThirdPartyResource
 - User
 
+</details>
+
 ### Restricted Control
 
-#### get, list, watch
+<details>
+<summary>get, list, watch</summary>
 
 - ClusterRoles
 - ClusterRoleBindings
@@ -212,7 +216,10 @@ Kubernetes RBAC permissions:
 - StorageClasses
 - Users
 
-#### create, delete, patch, update
+</details>
+
+<details>
+<summary>create, delete, patch, update</summary>
 
 - CertificateSigningRequest
 - ComponentStatus
@@ -248,9 +255,12 @@ Kubernetes RBAC permissions:
 - StatefulSet
 - ThirdPartyResource
 
+</details>
+
 ### Full Control
 
-#### get, list, watch, create, delete, patch, update
+<details>
+<summary>get, list, watch, create, delete, patch, update</summary>
 
 - CertificateSigningRequest
 - ClusterRoleBinding
@@ -291,6 +301,8 @@ Kubernetes RBAC permissions:
 - StorageClass
 - ThirdPartyResource
 - User
+
+</details>
 
 ### Scheduler
 
