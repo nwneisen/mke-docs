@@ -151,7 +151,7 @@ for Swarm mode does not exist in MKE 4. However, the Swarm mode roles have alway
 had Kubernetes RBAC roles associated with them. The upgrade process migrates these
 Kubernetes roles and bindings to the new MKE 4 cluster.
 
-The following sections list the MKE 3 Swarm mode roles and their corresponding
+The sections that follow detail the MKE 3 Swarm mode roles and their corresponding
 Kubernetes RBAC permissions:
 
 ### View Only
