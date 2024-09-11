@@ -145,10 +145,9 @@ restoring the MKE 3 cluster to its original state.
 
 ## RBAC Migrations
 
-MKE 4 uses a different RBAC model than MKE 3. MKE 4 no longer supports swarm mode
-and uses Kubernetes RBAC for authorization. As a result, the RBAC configuration
-for Swarm mode does not exist in MKE 4. However, the Swarm mode roles have always
-had Kubernetes RBAC roles associated with them. The upgrade process migrates these
+The RBAC model MKE 4 uses differs significantly from the one in use by MKE 3.
+
+As MKE 4 no longer supports Swarm mode, the platform uses Kubernetes RBAC for authorization. Thus, the RBAC configuration for Swarm mode does not exist in MKE 4. The Swarm mode roles have Kubernetes RBAC roles associated with them, however, and the MKE 4 upgrade process migrates these
 Kubernetes roles and bindings to the new MKE 4 cluster.
 
 The sections that follow detail the MKE 3 Swarm mode roles and their corresponding
