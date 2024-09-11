@@ -305,4 +305,4 @@ Kubernetes RBAC permissions:
 
 ### Scheduler
 
-No kubernetes RBAC permissions are associated with the Scheduler role.
+No Kubernetes RBAC permissions correlate to the Scheduler role.
