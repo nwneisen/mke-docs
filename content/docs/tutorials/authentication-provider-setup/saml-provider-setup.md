@@ -3,7 +3,7 @@ title: SAML provider setup
 weight: 1
 ---
 
-To configure an Okta application to serve as your [SAML authentication](../../../../operations/authentication/SAML) provider for MKE 4:
+To configure an Okta application to serve as your [SAML authentication](../../../../docs/operations/authentication/saml) provider for MKE 4:
 
 1. Select **SAML 2.0** for **Sign-in method**.
 2. For **App name**, choose a name that you can easily remember.
@@ -23,16 +23,13 @@ To configure an Okta application to serve as your [SAML authentication](../../..
 
    b. Click the blue **Assign** button that corresponds to the account you want to use for authentication.
 
-    Okta generates the `ssoURL` and certificate under the `Sign On` tab.
-    The `ssoURL` is the MetadataURL with the final metadata removed from the path.
+   Okta generates the `ssoURL` and certificate under the `Sign On` tab.
+   The `ssoURL` is the MetadataURL with the final metadata removed from the path.
 
 7. Download the certificate to the system from which you will run mkectl:
 
-    a. Navigate to the SAML **Signing Certificates** section.
+   a. Navigate to the SAML **Signing Certificates** section.
 
-    b. Click **Actions** for the active certificate and initiate the download.
+   b. Click **Actions** for the active certificate and initiate the download.
 
-9. Run the `mkectl apply` command with your MKE configuration file.
-
-For more information, refer to the official DEX documentation
-[Authentication through SAML 2.0](https://dexidp.io/docs/connectors/saml/).
+8. Run the `mkectl apply` command with your MKE configuration file.

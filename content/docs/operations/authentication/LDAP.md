@@ -26,6 +26,7 @@ authentication:
       emailAttr: mail
       nameAttr: cn
 ```
+
 ## Configure LDAP service for MKE
 
 In the MKE configuration file `authentication.ldap` section, enable your
@@ -36,7 +37,7 @@ the interactions with your LDAP server.
 The MKE configuration file `authentication.ldap` fields are detailed below:
 
 | Field                              | Description                                                           |
-|------------------------------------|-----------------------------------------------------------------------|
+| ---------------------------------- | --------------------------------------------------------------------- |
 | `host`                             | Host and optional port of the LDAP server, in the `host:port` format. |
 | `rootCA`                           | Path to a trusted root certificate file.                              |
 | `bindDN`                           | Distinguished Name (DN) for an application service account.           |
@@ -61,12 +62,9 @@ For more information, refer to the official DEX documentation
 
 ## Test authentication flow
 
-{{< callout type="info" >}}
-  To test authentication flow, ports `5556` (dex) and `5555` (example-app) must be externally available.
-{{< /callout >}}
-
-1. Navigate to `http://{MKE hostname}:5555/login`.
+1. Navigate to the MKE dashboard `https://{MKE hostname}`
 2. Click **Login** to display the login page.
 3. Select **Log in with LDAP**.
 4. Enter the username and password for the LDAP server.
-5. Click **Login**. If authentication is successful, you will be redirected to the client applications home page.
+5. Enter your credentials and click **Sign In**. If authentication is successful,
+   you will be redirected to the MKE dashboard page.
