@@ -3,10 +3,10 @@ title: Authentication
 weight: 1
 ---
 
-MKE uses [Dex](https://dexidp.io/) for authentication. Dex behaves as a proxy
-between your MKE cluster and your authentication providers. Dex combines the
+MKE uses [Dex](https://dexidp.io/) for authentication. Dex serves as a proxy
+between your MKE cluster and your authentication providers, combining the
 configuration of multiple authentication providers into a single configuration
-and handles the complexity of the various protocols.
+while also handling the complexity of the various protocols.
 
 Mirantis Kubernetes Engine (MKE) supports the following authentication
 protocols:
@@ -21,10 +21,7 @@ You must have certain dependencies in place before you can configure
 authentication. These dependencies differ, depending on which authentication
 protocol you choose to deploy.
 
-- **Identity Provider (IdP):** To use OIDC or SAML, you must configure an
-  identity provider. Refer to [OIDC](../../operations/authentication/oidc-providers/oidc) or
-  [SAML](../../operations/authentication/saml-providers/saml) for examples
-  of using Okta as an authentication provider for either protocol.
+- **Identity Provider (IdP):** To use OIDC or SAML, you must configure an identity provider. For examples of how to use Okta as an authentication service provider for either of these protocols, refer to [OIDC](../../operations/authentication/oidc-providers/oidc) or [SAML](../../operations/authentication/saml-providers/saml).
 
 - **LDAP Server:** To use LDAP, you must have an LDAP server configured. An
   example server on your local machine can be found at [LDAP](../../operations/authentication/ldap).
@@ -51,9 +48,7 @@ authentication:
 
 ### Expiry
 
-The `expiry` section of the configuration file allows you to set the expiration
-time for refresh and id tokens. These should be set in the format of number +
-time unit (e.g. `1h` for one hour).
+You can use the `expiry` section of the configuration file to set the expiration time for refresh and id tokens, in the format of number + time unit format. For example, `1h` to designate one hour.
 
 ```yaml
 authentication:

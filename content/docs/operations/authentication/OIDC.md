@@ -41,9 +41,9 @@ For more information, refer to the official DEX documentation
 
 ## Test authentication flow
 
-1. Navigate to the MKE dashboard `https://{MKE hostname}`
+1. Navigate to the MKE dashboard: `https://{MKE hostname}`
 2. Click **Login** to display the login page.
 3. Select **Log in with OIDC**. This will redirect you to the OIDC provider's
    login page.
 4. Enter your credentials and click **Sign In**. If authentication is successful,
-   you will be redirected to the MKE dashboard page.
+   you will be redirected to the MKE dashboard.
