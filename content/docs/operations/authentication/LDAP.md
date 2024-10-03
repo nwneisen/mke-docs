@@ -34,6 +34,10 @@ LDAP service by setting `enabled` to `true`. Use the remaining fields, which
 are defined in the following table, to configure
 the interactions with your LDAP server.
 
+{{< callout type="info" >}}
+For information on how to obtain the field values, refer to the [using openldap as an ldap provider](../../../tutorials/authentication-provider-setup/using-openldap-as-an-ldap-provider).
+{{< /callout >}}
+
 The MKE configuration file `authentication.ldap` fields are detailed below:
 
 | Field                              | Description                                                           |
@@ -59,12 +63,3 @@ The MKE configuration file `authentication.ldap` fields are detailed below:
 
 For more information, refer to the official DEX documentation
 [LDAP configuration](https://dexidp.io/docs/connectors/ldap/#configuration).
-
-## Test authentication flow
-
-1. Navigate to the MKE dashboard `https://{MKE hostname}`
-2. Click **Login** to display the login page.
-3. Select **Log in with LDAP**.
-4. Enter the username and password for the LDAP server.
-5. Enter your credentials and click **Sign In**. If authentication is successful,
-   you will be redirected to the MKE dashboard page.

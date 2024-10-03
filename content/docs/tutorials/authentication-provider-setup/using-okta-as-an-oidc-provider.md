@@ -1,5 +1,5 @@
 ---
-title: OIDC provider setup
+title: Using Okta as an OIDC provider
 weight: 1
 ---
 
@@ -14,3 +14,11 @@ To configure an Okta application to serve as your [OIDC authentication](../../..
 5. Click **Save** to generate the `clientSecret` and `clientID` in the `General` table of the application.
 6. Add the generated `clientSecret` and `clientID` values to your MKE configuration file.
 7. Run the `mkectl apply` command with your MKE configuration file.
+
+## Test authentication flow
+
+1. Navigate to the MKE dashboard: `https://{MKE hostname}`
+2. Select **Log in with SAML**. This will redirect you to Okta's
+   login page for your application.
+3. Enter your credentials and click **Sign In**. If authentication is successful,
+   you will be redirected to the MKE dashboard.

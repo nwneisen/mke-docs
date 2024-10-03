@@ -26,7 +26,7 @@ OIDC service by setting `enabled` to `true`. Use the remaining fields, which
 are defined in the following table, to configure your chosen OIDC provider.
 
 {{< callout type="info" >}}
-For information on how to obtain the field values, refer to the [OIDC provider example](../../../tutorials/authentication-provider-setup/oidc-provider-setup).
+For information on how to obtain the field values, refer to the [using Okta as an OIDC provider example](../../../tutorials/authentication-provider-setup/using-okta-as-an-oidc-provider).
 {{< /callout >}}
 
 | Field          | Description                                                          |
@@ -38,12 +38,3 @@ For information on how to obtain the field values, refer to the [OIDC provider e
 
 For more information, refer to the official DEX documentation
 [OIDC configuration](https://dexidp.io/docs/connectors/oidc/#configuration).
-
-## Test authentication flow
-
-1. Navigate to the MKE dashboard: `https://{MKE hostname}`
-2. Click **Login** to display the login page.
-3. Select **Log in with OIDC**. This will redirect you to the OIDC provider's
-   login page.
-4. Enter your credentials and click **Sign In**. If authentication is successful,
-   you will be redirected to the MKE dashboard.
