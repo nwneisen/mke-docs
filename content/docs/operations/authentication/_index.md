@@ -24,7 +24,7 @@ protocol you choose to deploy.
 - **Identity Provider (IdP):** To use OIDC or SAML, you must configure an identity provider. For examples of how to use Okta as an authentication service provider for either of these protocols, refer to [OIDC](../../operations/authentication/oidc-providers/oidc) or [SAML](../../operations/authentication/saml-providers/saml).
 
 - **LDAP Server:** To use LDAP, you must have an LDAP server configured. An
-  example server on your local machine can be found at [LDAP](../../operations/authentication/ldap).
+  example of how to create an OpenLDAP server can be found at [LDAP](../../tutorials/authentication-provider-setup/ldap).
 
 ## Configuration
 
@@ -56,6 +56,8 @@ authentication:
   expiry:
     refreshTokens: {}
 ```
+
+The following table shows all of the available fields for the `expiry` section.
 
 | Field                                    | Description                                                                |
 | ---------------------------------------- | -------------------------------------------------------------------------- |
