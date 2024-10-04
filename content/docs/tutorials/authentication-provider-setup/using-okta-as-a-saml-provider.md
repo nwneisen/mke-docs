@@ -1,5 +1,5 @@
 ---
-title: Using Okta as a SAML provider
+title: Setting up Okta as a SAML provider
 weight: 1
 ---
 

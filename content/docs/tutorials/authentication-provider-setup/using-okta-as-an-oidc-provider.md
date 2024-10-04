@@ -1,5 +1,5 @@
 ---
-title: Using Okta as an OIDC provider
+title: Setting up Okta as an OIDC provider
 weight: 1
 ---
 
