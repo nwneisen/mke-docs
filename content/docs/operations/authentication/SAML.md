@@ -26,7 +26,7 @@ SAML service by setting `enabled` to `true`. Use the remaining fields, which
 are defined in the following table, to configure your chosen SAML provider.
 
 {{< callout type="info" >}}
-For information on how to obtain the field values, refer to the [using Okta as a provider example](../../../tutorials/authentication-provider-setup/using-okta-as-a-saml-provider).
+For information on how to obtain the field values, refer to the [setting up Okta as a provider example](../../../tutorials/authentication-provider-setup/setting-up-okta-as-a-saml-provider).
 {{< /callout >}}
 
 | Field                             | Description                                                                                                                                                          |

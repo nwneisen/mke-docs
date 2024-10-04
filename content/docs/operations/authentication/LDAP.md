@@ -35,7 +35,7 @@ are defined in the following table, to configure
 the interactions with your LDAP server.
 
 {{< callout type="info" >}}
-For information on how to obtain the field values, refer to the [using openldap as an ldap provider](../../../tutorials/authentication-provider-setup/using-openldap-as-an-ldap-provider).
+For information on how to obtain the field values, refer to the [setting up OpenLDAP as an ldap provider](../../../tutorials/authentication-provider-setup/setting-up-openldap-as-an-ldap-provider).
 {{< /callout >}}
 
 | Field                              | Description                                                           |
