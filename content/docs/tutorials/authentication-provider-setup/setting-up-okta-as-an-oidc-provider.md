@@ -5,15 +5,16 @@ weight: 1
 
 To configure an Okta application to serve as your [OIDC authentication](../../../../docs/operations/authentication/oidc) provider for MKE 4:
 
-1. Select **OIDC - OpenID Connect** for **Sign-in method**.
-2. Select **Web Application** for **Application Type**.
-3. For **App integration name**, choose a name that you can easily remember.
-4. Configure the host for your redirect URLs:
+1. Navigate to (Okta)[https://www.okta.com/] and sign in to your accounts dashboard.
+2. Select **OIDC - OpenID Connect** for **Sign-in method**.
+3. Select **Web Application** for **Application Type**.
+4. For **App integration name**, choose a name that you can easily remember.
+5. Configure the host for your redirect URLs:
    - Sign-in redirect URIs: `http://{MKE hostname}/login`
    - Sign-out redirect URIs: `http://{MKE hostname}`
-5. Click **Save** to generate the `clientSecret` and `clientID` in the `General` table of the application.
-6. Add the generated `clientSecret` and `clientID` values to your MKE configuration file.
-7. Run the `mkectl apply` command with your MKE configuration file.
+6. Click **Save** to generate the `clientSecret` and `clientID` in the `General` table of the application.
+7. Add the generated `clientSecret` and `clientID` values to your MKE configuration file.
+8. Run the `mkectl apply` command with your MKE configuration file.
 
 ## Test authentication flow
 

@@ -38,8 +38,6 @@ the interactions with your LDAP server.
 For information on how to obtain the field values, refer to the [using openldap as an ldap provider](../../../tutorials/authentication-provider-setup/using-openldap-as-an-ldap-provider).
 {{< /callout >}}
 
-The MKE configuration file `authentication.ldap` fields are detailed below:
-
 | Field                              | Description                                                           |
 | ---------------------------------- | --------------------------------------------------------------------- |
 | `host`                             | Host and optional port of the LDAP server, in the `host:port` format. |
