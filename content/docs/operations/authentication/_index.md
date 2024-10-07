@@ -30,7 +30,7 @@ protocol you choose to deploy.
 You configure authentication for MKE through the `authentication` section
 of the MKE configuration file.
 
-Authentication is is always enabled, however, the settings for each of the
+Authentication is always enabled, however, the settings for each of the
 individual authentication protocols are disabled. To enable and install an
 authentication protocol, set its `enabled` configuration option to `true`.
 
@@ -56,15 +56,15 @@ authentication:
 
 The following table shows all of the available fields for the `expiry` section.
 
-| Field                                    | Description                                                                |
-| ---------------------------------------- | -------------------------------------------------------------------------- |
-| `expiry`                                 | The section for the various expiry settings                                |
-| `expiry.idTokens`                        | The lifetime of the ID tokens                                              |
-| `expiry.authRequests`                    | The time frame that a code can be exchanged for a token                    |
-| `expiry.deviceRequests`                  | The time frame in which users can authorize a device to receive a token    |
-| `expiry.signingKeys`                     | The time period after which the signing keys are rotated                   |
-| `expiry.refreshTokens`                   | The section for the various refresh token settings                         |
-| `expiry.refreshTokens.validIfNotUsedFor` | Invalidate a refresh token if it's not used for the specified time         |
-| `expiry.refreshTokens.absoluteLifetime`  | Absolute time frame of a refresh token                                     |
-| `expiry.refreshTokens.disableRotation`   | Disable every-request rotation                                             |
-| `expiry.refreshTokens.reuseInterval`     | Interval to allow getting the same refresh token from the refresh endpoint |
+| Field                                    | Description                                                              |
+| ---------------------------------------- | ------------------------------------------------------------------------ |
+| `expiry`                                 | Section for the various expiry settings.                                 |
+| `expiry.idTokens`                        | Lifetime of the ID tokens.                                               |
+| `expiry.authRequests`                    | Time frame that a code can be exchanged for a token.                     |
+| `expiry.deviceRequests`                  | Time frame in which users can authorize a device to receive a token.     |
+| `expiry.signingKeys`                     | Time period after which the signing keys are rotated.                    |
+| `expiry.refreshTokens`                   | Section for the various refresh token settings.                          |
+| `expiry.refreshTokens.validIfNotUsedFor` | Invalidate a refresh token if it is not used for the specified time.     |
+| `expiry.refreshTokens.absoluteLifetime`  | Absolute time frame of a refresh token.                                  |
+| `expiry.refreshTokens.disableRotation`   | Disable every-request rotation.                                          |
+| `expiry.refreshTokens.reuseInterval`     | Interval for obtaining the same refresh token from the refresh endpoint. |

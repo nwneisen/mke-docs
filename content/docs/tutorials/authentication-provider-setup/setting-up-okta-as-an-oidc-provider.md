@@ -19,7 +19,7 @@ To configure an Okta application to serve as your [OIDC authentication](../../..
 ## Test authentication flow
 
 1. Navigate to the MKE dashboard: `https://{MKE hostname}`
-2. Select **Log in with SAML**. This will redirect you to Okta's
+2. Select **Log in with SAML**. This will redirect you to the Okta
    login page for your application.
 3. Enter your credentials and click **Sign In**. If authentication is successful,
    you will be redirected to the MKE dashboard.
