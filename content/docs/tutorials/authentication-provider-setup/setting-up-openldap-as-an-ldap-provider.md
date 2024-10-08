@@ -6,7 +6,7 @@ weight: 1
 To create a basic OpenLDAP server to test [LDAP](../../../../docs/operations/authentication/ldap) with MKE4:
 
 >{{< callout type="info" >}}
-  To run the OpenLDAP server you must have [Docker and docker compose](https://docs.docker.com/engine/install/) installed on your system.
+  To run the OpenLDAP server you must have [Docker and Docker Compose](https://docs.docker.com/engine/install/) installed on your system.
 {{< /callout >}}
 
 1. Create a file called `config-ldap.ldif` with the following content:
