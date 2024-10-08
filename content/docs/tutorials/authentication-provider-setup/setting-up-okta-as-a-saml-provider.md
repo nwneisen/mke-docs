@@ -5,7 +5,7 @@ weight: 1
 
 To configure an Okta application to serve as your [SAML authentication](../../../../docs/operations/authentication/saml) provider for MKE 4:
 
-1. Navigate to (Okta)[https://www.okta.com/] and sign in to your account's dashboard.
+1. Navigate to (Okta)[https://www.okta.com/] and sign in to your account dashboard.
 2. Select **SAML 2.0** for **Sign-in method**.
 3. Enter an **App name** that is easy to remember.
 4. Configure the host for your redirect URLs:
