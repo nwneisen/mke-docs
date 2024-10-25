@@ -45,7 +45,7 @@ authentication:
 
 To obtain the metadata URL in Okta, navigate to **Applications -> Applications -> Your application** and click the **Sign On** tab.
 
-Example ssoMetadataURL information:
+Example `ssoMetadataURL` information:
 
 ```shell
 <md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" entityID="http://www.okta.com/exk75pi5do2MzU1t95r7">
