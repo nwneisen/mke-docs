@@ -34,9 +34,7 @@ To configure an Okta application to serve as your [SAML authentication](../../..
 {{< tabs items="SSO metadata URL,manual" >}}
 
 {{< tab >}}
-Okta provides a metadata URL that you can used to configure SAML in MKE. MKE can
-retrieve information for all of the SAML configurations in your MKE cluster by
-accessing the URL configured to `ssoMetadataURL` in the MKE configuration file.
+Okta provides a metadata URL with which you can configure SAML for MKE 4. MKE is able to obtain information for all SAML configurations in your MKE cluster through that URL, which you configure to the `ssoMetadataURL` parameter in the `authentication` section of the MKE configuration file.
 
 ```yaml
 authentication:
@@ -45,11 +43,7 @@ authentication:
     ssoMetadataURL: https://dev-14305804.okta.com/app/exkdtjvsinbvwD5ms5d0/sso/saml/metadata
 ```
 
-The metadata URL can be found in Okta by navigating to
-
-1. Applications -> Applications -> Your application
-2. Click the **Sign On** tab
-3. The metadata URL is displayed in the first section of the page.
+To obtain the metadata URL in Okta, navigate to **Applications -> Applications -> Your application** and click the **Sign On** tab.
 
 Example of information provided when you access the `ssoMetadataURL` URL:
 
@@ -75,7 +69,8 @@ Example of information provided when you access the `ssoMetadataURL` URL:
 
 {{< tab >}}
 
-Manually configuring the SAML service in MKE allows more control over the configuration.
+Set up the SAML service manually in MKE to gain more control over the configuration.
+An example of the `saml` section of the MKE 4 configuration file under `authentication` follows:
 
 ```yaml
 authentication:
@@ -107,21 +102,21 @@ mcw9Dlufaan1XxqnVivuWe3qVSVIWngUOUt2EA==
 -----END CERTIFICATE-----
 ```
 
-This information can be found in Okta b y navigating to
+The table that follows provides detail on how to obtain the information for the `saml` section parameters:
 
-1. Applications -> Applications -> Your application
-2. Click the **Sign On** tab
-3. Click the `View SAML setup instructions` link on the right side of the page.
-4. The `ssoURL` is displayed in the `Identity Provider Single Sign-On URL` section.
-5. The certificate is displayed in the `X.509 Certificate` section.
-6. The `redirectURI` will be the external address of your cluster with `/dex/callback` appended to the end.
-7. The `usernameAttr` and `emailAttr` are the attributes that will be used to map the user's name and email to the MKE user. These can be left the same as the values in the example since that is what Okta was configured to use above.
+|    Parameter   | Detail                                                                                                                                                                                                                                                                                                         |
+|:--------------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  `ssoURL`      | Obtain the `ssoURL` and certificate information from Okta:<br>  1. Navigate to **Applications -> Applications -> Your application**.<br>  2. Click the **Sign On** tab.<br>  3. Click the **View SAML setup instructions` link**. The `ssoURL` displays in the `Identity Provider Single Sign-On URL` section. |
+| `redirectURI`  | The external address of your cluster, with `/dex/callback` appended.                                                                                                                                                                                                                                           |
+| `usernameAttr` | Attribute used to map the username to the MKE user.                                                                                                                                                                                                                                                            |
+| `emailAttr`    | Attribute that maps the email address to the MKE user.                                                                                                                                                                                                                                                         |
+| `caData`       | Obtain the Certificate information from Okta:<br>  1. Navigate to **Applications -> Applications -> Your application**.<br>  2. Click the **Sign On** tab.<br>  3. Click the **View SAML setup instructions` link**. The certificate displays in the `X.509 Certificate` section.                              |
 
 {{< /tab >}}
 
 {{< /tabs >}}
 
-Run the `mkectl apply` command with your MKE configuration file.
+Once the `saml` section of the MKE 4 configuration file is set, run it with the `mkectl apply` command.
 
 ## Test authentication flow
 
