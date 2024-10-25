@@ -71,7 +71,7 @@ Example `ssoMetadataURL` information:
 
 Set up the SAML service manually in MKE to gain more control over the configuration.
 
-An example of the `saml` section of the MKE 4 configuration file under `authentication` follows:
+An example follows of the `saml` section of the MKE 4 configuration file under `authentication`:
 
 ```yaml
 authentication:
