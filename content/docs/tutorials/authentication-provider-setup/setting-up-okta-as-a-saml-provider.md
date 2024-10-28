@@ -34,7 +34,10 @@ To configure an Okta application to serve as your [SAML authentication](../../..
 {{< tabs items="SSO metadata URL,manual" >}}
 
 {{< tab >}}
-Okta provides a metadata URL with which you can configure SAML for MKE 4. MKE is able to obtain information for all SAML configurations in your MKE cluster through that URL, which you configure to the `ssoMetadataURL` parameter in the `authentication` section of the MKE configuration file.
+Okta provides a metadata URL with which you can configure SAML for MKE 4.
+MKE is able to obtain information for all SAML configurations in your MKE cluster through that URL,
+which you configure to the `ssoMetadataURL` parameter in the `authentication` section of the MKE
+configuration file.
 
 ```yaml
 authentication:
